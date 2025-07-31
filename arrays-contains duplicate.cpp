@@ -12,3 +12,7 @@ public:
       return false;  
     }
 };
+
+
+approach- first sort the array from stl 
+second apply a for loop that iterates and comapre consective elements 
