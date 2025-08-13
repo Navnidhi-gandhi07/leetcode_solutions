@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int n =nums.size();
+        
+        int maximum=0;
+        int count=1;
+        int a;
+       
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n-1;i++){
+         if(nums[i]==nums[i+1]){
+            count++;
+            if(maximum<count){
+                maximum=count;
+            if(maximum>n/2){
+               a=i;
+               break;
+            }}
+         }
+         else{
+            count=1;
+
+         }
+        }
+
+        return nums[a];
+    }
+};
