@@ -1,0 +1,26 @@
+class Solution {
+public:
+    long long zeroFilledSubarray(vector<int>& nums) {
+        int n=nums.size();
+        int l=0;
+        int r=0;
+        long long countz=0;
+        long long count=0;
+
+        while(r<n){
+           if( nums[r]==0){
+            countz++;
+            count=countz+count;
+            r++;
+
+           }
+           else{
+            
+            r++;
+            l=r;
+            countz=0;
+           }
+        }
+       return count; 
+    }
+};
