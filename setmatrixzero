@@ -1,0 +1,38 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int m=matrix[0].size();
+        int n=matrix.size();
+        stack<int> arr;
+        stack<int >aarr;
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(matrix[i][j]==0){
+                  
+                   arr.push(i);
+                   aarr.push(j);
+                 
+                }
+               
+           
+        }
+        
+    }               while(!arr.empty()){
+        int i=arr.top();
+                        arr.pop();
+                    for(int k=0;k<m;k++){
+                        
+                          matrix[i][k]=0;
+                    }
+    }
+    while(!aarr.empty()){
+        int j=aarr.top();
+                      aarr.pop();
+                      for(int k=0;k<n;k++){
+                      
+                        matrix[k][j]=0;
+                    }
+    }
+    }
+};
